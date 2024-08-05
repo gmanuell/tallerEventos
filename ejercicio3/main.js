@@ -10,14 +10,14 @@ function crearInterfaz() {
     app.innerHTML = `
         <div class="container mt-5 bg-success text-white">
             <h1 class="mb-4">Aplicación de Notas</h1>
-            <div class="row mb-3">
+            <div class="col mb-3">
                 <div class="col-md-6">
                     <input type="text" id="titulo" class="form-control mb-2" placeholder="Título">
                     <textarea id="texto" class="form-control mb-2" placeholder="Texto de la nota"></textarea>
                     <button onclick="guardarNota()" class="btn btn-primary me-2">Guardar</button>
                     <button onclick="limpiarCampos()" class="btn btn-secondary">Limpiar</button>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mt-3">
                     <input type="text" id="filtro-texto" class="form-control mb-2" placeholder="Buscar notas" oninput="aplicarFiltros()">
                     <div class="form-check form-switch">
                         <input type="checkbox" id="filtro-realizadas" class="form-check-input" role="switch" onchange="aplicarFiltros()">
