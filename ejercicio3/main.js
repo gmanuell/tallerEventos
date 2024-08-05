@@ -1,70 +1,3 @@
-// let arrayNotas = []; //Crear un array donde vamos a guardar las notas
-// let id = 0; //Crear una variable idGlobal e inicializala en el mismo valor del ultimo id que creaste manualmente, usaremos esto como control de las notas.
-// const contenedorNotas = document.getElementById("infoCard");
-// const searchNota = document.getElementById("searchNota");
-
-// function guardarNota() { 
-//     id +=1
-//     let tituloNota = document.getElementById("tituloNota").value;
-//     let descripcionNota = document.getElementById("descripcionNota").value;
-//     let realizada = false 
-//     let nuevaNota = {
-//         id:id,
-//         titulo:tituloNota,
-//         texto:descripcionNota,
-//         realizada:realizada
-//     }
-//     arrayNotas.push(nuevaNota); //Agregar un par de notas de prueba como la siguiente
-//     console.log(arrayNotas);
-//     actualizarNotas();
-// }
-
-// function borrarNota(id) {
-//     arrayNotas = arrayNotas.filter(item=>item.id!==id)
-//     actualizarNotas();
-    
-// }
-
-// function actualizarNotas() {
-//     contenedorNotas.innerHTML = '';
-//     arrayNotas.forEach(nota=>{
-//         const carta = document.createElement("div");
-//         carta.className = "card m-2";
-//         carta.innerHTML = `
-//         <div class="card-body">
-//                 <h5 class="card-title">${nota.titulo}</h5>
-//               <p class="card-text">${nota.texto}</p>
-//               <button onclick="borrarNota(${nota.id})" class="btn btn-primary">borrar nota</button>
-//             </div>
-//         `;
-//         contenedorNotas.appendChild(carta);
-//     })
-// }
-
-// searchNota.addEventListener('keyup',(event)=>{
-//     const titulo = event.target.value
-//     console.log(titulo);
-    
-//     const notasFiltradas = arrayNotas.filter(item=>item.titulo.toLowerCase().includes(titulo.toLowerCase()))
-//     if (notasFiltradas.length>0) {
-//        contenedorNotas.innerHTML = "" 
-//         notasFiltradas.forEach(nota=>{
-//             const carta = document.createElement("div");
-//             carta.className = "card m-2";
-//             carta.innerHTML = `
-//             <div class="card-body">
-//             <h5 class="card-title">${nota.titulo}</h5>
-//             <p class="card-text">${nota.texto}</p>
-//             <button onclick="borrarNota(${nota.id})" class="btn btn-primary">borrar nota</button>
-//             </div>
-//             `;
-//             contenedorNotas.appendChild(carta);
-//         })   
-//     }
-//     else {contenedorNotas.innerHTML = '<p>No items found.</p>'
-//     }    
-// })
-
 let notas = [
     { id: 1, titulo: "Nota 1", texto: "Esta es la primera nota", realizada: false },
     { id: 2, titulo: "Nota 2", texto: "Esta es la segunda nota", realizada: true }
@@ -75,7 +8,7 @@ let idGlobal = 2;
 function crearInterfaz() {
     const app = document.getElementById('app');
     app.innerHTML = `
-        <div class="container mt-5">
+        <div class="container mt-5 bg-success text-white">
             <h1 class="mb-4">Aplicación de Notas</h1>
             <div class="row mb-3">
                 <div class="col-md-6">
@@ -111,7 +44,7 @@ function pintarNotas(notasFiltradas = notas) {
         notaElement.className = 'col-md-4 mb-3';
         notaElement.innerHTML = `
             <div class="card">
-                <div class="card-body">
+                <div class="card-body text-dark">
                     <h5 class="card-title">${nota.titulo}</h5>
                     <p class="card-text">${nota.texto}</p>
                     <div class="form-check form-switch mb-2">
