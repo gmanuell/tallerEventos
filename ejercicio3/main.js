@@ -47,8 +47,8 @@ function pintarNotas(notasFiltradas = notas) {
                 <div class="card-body text-dark">
                     <h5 class="card-title">${nota.titulo}</h5>
                     <p class="card-text">${nota.texto}</p>
-                    <div class="form-check form-switch mb-2">
-                        <input type="checkbox" class="form-check-input" role="switch" ${nota.realizada ? 'checked' : ''} onchange="marcarRealizada(${nota.id})">
+                    <div class="form-check  mb-2">
+                        <input type="checkbox" class="form-check-input" ${nota.realizada ? 'checked' : ''} onchange="marcarRealizada(${nota.id})">
                         <label class="form-check-label">Realizada</label>
                     </div>
                     <button onclick="borrarNota(${nota.id})" class="btn btn-danger btn-sm">Borrar nota</button>
